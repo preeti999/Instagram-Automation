@@ -11,6 +11,8 @@ let numofPost = process.argv[2];
     });
     const page = await browser.newPage();
     await page.goto(data.url, { waitUntil: "networkidle2" });
+    
+    //Type userName and password fetch from the credentials.json
     await page.type("input[name='username']", data.user, { delay: 100 });
     await page.type("input[name='password']", data.pwd, { delay: 100 });
 
@@ -50,6 +52,6 @@ let numofPost = process.argv[2];
     } while (i < numofPost) { }
 
     
-    // to close the browser
+    // if you want to close the browser
     // await browser.close();
 })();
